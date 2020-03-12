@@ -1,0 +1,85 @@
+﻿<Window x:Class="WSR_New_Sewing.View.Stockman.StockmanRolls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WSR_New_Sewing.View.Stockman"
+        mc:Ignorable="d"
+        Title="Рулоны"
+        Height="450"
+        Width="820">
+    <Grid Background="Pink">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Background="Pink"
+                  IsReadOnly="True"
+                  Name="stock_grid"
+                  AutoGenerateColumns="False"
+                  FontSize="16"
+                  ItemsSource="{Binding StockmanModels}"
+                  CanUserAddRows="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Материал" Binding="{Binding Материал}" />
+                <DataGridTextColumn Header="Цвет" Binding="{Binding Цвет}" />
+                <DataGridTextColumn Header="Ширина" Binding="{Binding Ширина}" />
+                <DataGridTextColumn Header="Длина" Binding="{Binding Длина}"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+            <Button
+                    Width="150"
+                    Height="60"
+                    Background="Black"
+                    Content="Назад"
+                    FontSize="20"
+                    Margin="10, 0, 0, 0"
+                    Foreground="White" Click="Button_Click"/>
+
+            <Button
+                    Width="150"
+                    Height="60"
+                    Background="Black"
+                    Content="Обновить"
+                    FontSize="20"
+                    Margin="10, 0, 0, 0"
+                    Foreground="White" Click="Button_Click_2"
+                />
+
+
+            <Button
+                    Width="150"
+                    Height="60"
+                    Background="Black"
+                    Content="Добавить"
+                    FontSize="20"
+                    Margin="10, 0, 0, 0"
+                    Foreground="White" Click="Button_Click_3"/>
+
+            <Button
+                    Width="150"
+                    Height="60"
+                    Background="Black"
+                    Content="Удалить"
+                    FontSize="20"
+                    Margin="10, 0, 0, 0"
+                    Foreground="White" Click="Button_Click_4" />
+
+            <Button
+                    Width="150"
+                    Height="60"
+                    Background="Black"
+                    Content="Выход"
+                    FontSize="20"
+                    Margin="10, 0, 0, 0"
+                    Foreground="White" Click="Button_Click_1"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
